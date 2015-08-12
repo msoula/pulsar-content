@@ -1,0 +1,14 @@
+default:
+- 'css'
+
+dev:
+- 'default'
+- 'watch'
+
+release:
+- 'pre-build'
+- 'css'
+- 'uncss'
+- 'cssmin'
+- 'replace:css'
+- 'index'
