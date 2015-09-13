@@ -21,12 +21,11 @@
     <script src="js/angular.min.js"></script>
     <script src="js/app.js"></script>
 </head>
-<body ng-app="app">
+<body ng-app="app" ng-controller="AppCtrl">
 <h1>CosmicBox</h1>
+<span class="thumbs" ng-if="progress" ng-hide="progress.done == progress.count">Miniature ({{progress.done}}/{{progress.count}})</span>
 
-<div ng-view></div>
-
-<div class="imgs" ng-controller="AppCtrl">
+<div class="imgs">
     <thumb data="f" ng-repeat="f in files" ng-click="open($event, f)"></thumb>
 </div>
 </body>

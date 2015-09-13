@@ -11,21 +11,22 @@ var fileTree = require('./app/bootstrap.js')(PATH);
 app.use(express.static(PATH));
 
 app.get('/files.json', function(req, res, next) {
-    res.json(fileTree);
+  res.json(fileTree);
 });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
 // error handlers
 app.use(function(err, req, res, next) {
+  if (err.status !== 404)
     console.error(err);
-    res.status(err.status || 500);
-    res.send("Error " + err.status || 500);
+  res.status(err.status || 500);
+  res.send("Error " + err.status || 500);
 });
 
 

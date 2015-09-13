@@ -4,6 +4,11 @@ h1 {
   margin: 0;
   padding: 15px 0;
 }
+.thumbs {
+  position: absolute;
+  top: 24px;
+  right: 16px;
+}
 .imgs {
   padding: 2px;
 }

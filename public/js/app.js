@@ -7,6 +7,8 @@ angular.module('app', [])
                 console.log($location.path());
                 var frag = $location.path().split('/');
                 $scope.files = $scope.FILES;
+                $scope.progress = $scope.files.__thumbs;
+                delete $scope.files.__thumbs;
                 for(var i = 0; i < frag.length; i++) {
                     if(frag[i] === '') {
                         continue;
@@ -88,4 +90,3 @@ angular.module('app', [])
             }
             console.log(data);
         }]);
-
