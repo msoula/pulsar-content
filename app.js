@@ -30,7 +30,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-var port = 3000; // TODO config
+var port = 80;
 app.listen(port);
 console.log('Magic happens at ' + port);
 
