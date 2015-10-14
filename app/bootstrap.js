@@ -119,6 +119,7 @@ module.exports = function(p) {
             var thumbPath = path.join(p, '/__thumb/', crc);
             fs.stat(thumbPath, function(err, stats) {
               if (!err && stats && stats.isFile()) {
+				img.img = path.join('__thumb/', crc);
                 fileTree.__thumbs.done = resized++;
                 return cb();
               } else {
