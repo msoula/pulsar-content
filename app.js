@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var app = express();
+var exec = require('child_process').exec;
 
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -12,6 +13,11 @@ app.use(express.static(PATH));
 
 app.get('/files.json', function(req, res, next) {
   res.json(fileTree);
+});
+
+app.get('/killmenow', function(req, res) {
+	exec('/sbin/poweroff');
+	res.send(200, 'Cosmicbox-pulsar is stopping...');
 });
 
 // catch 404 and forward to error handler
